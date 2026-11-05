@@ -1,0 +1,73 @@
+{
+  "about": "Hotkeys registered by Key Deck (~/Applications/Key Deck.app). scan.py reads this file.",
+  "hotkeys": [
+    {
+      "combo": "HYPER+/",
+      "action": "deck"
+    },
+    {
+      "combo": "HYPER+W",
+      "action": "webcam"
+    },
+    {
+      "combo": "HYPER+1",
+      "action": "chat-granola"
+    },
+    {
+      "combo": "HYPER+2",
+      "action": "chat-wispr"
+    },
+    {
+      "combo": "HYPER+3",
+      "action": "chat-claude"
+    },
+    {
+      "combo": "HYPER+4",
+      "action": "transcript-swap"
+    },
+    {
+      "combo": "HYPER+5",
+      "action": "krisp-peek"
+    },
+    {
+      "combo": "HYPER+6",
+      "action": "chat-wispr-flow"
+    },
+    {
+      "combo": "HYPER+T",
+      "action": "transcript-copy"
+    },
+    {
+      "combo": "HYPER+KEYPAD7",
+      "action": "ring-7"
+    },
+    {
+      "combo": "HYPER+KEYPAD8",
+      "action": "ring-8"
+    },
+    {
+      "combo": "HYPER+KEYPAD9",
+      "action": "ring-9"
+    },
+    {
+      "combo": "HYPER+KEYPAD4",
+      "action": "ring-4"
+    },
+    {
+      "combo": "HYPER+KEYPAD6",
+      "action": "ring-6"
+    },
+    {
+      "combo": "HYPER+KEYPAD1",
+      "action": "ring-1"
+    },
+    {
+      "combo": "HYPER+KEYPAD2",
+      "action": "ring-2"
+    },
+    {
+      "combo": "HYPER+KEYPAD3",
+      "action": "ring-3"
+    }
+  ]
+}

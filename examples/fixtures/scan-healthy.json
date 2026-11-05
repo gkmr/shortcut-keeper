@@ -1,0 +1,149 @@
+{
+ "rows": [
+  {
+   "combo": "HYPER+/",
+   "owner": "Key Deck",
+   "action": "deck",
+   "source": "keydeck.json",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "HYPER+W",
+   "owner": "Key Deck",
+   "action": "webcam",
+   "source": "keydeck.json",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "fn",
+   "owner": "Wispr Flow",
+   "action": "ptt",
+   "source": "config.json",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "rctrl",
+   "owner": "Wispr Flow",
+   "action": "ptt",
+   "source": "config.json",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "ctrl+cmd+V",
+   "owner": "Wispr Flow",
+   "action": "paste_last_text",
+   "source": "config.json",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "ctrl+opt+C",
+   "owner": "Rectangle Pro",
+   "action": "almostMaximize",
+   "source": "defaults",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "HYPER+Y",
+   "owner": "Rectangle Pro",
+   "action": "topCenterSixth",
+   "source": "defaults",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "ctrl+opt+]",
+   "owner": "Rectangle Pro",
+   "action": "largerWidth",
+   "source": "defaults",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "ctrl+opt+[",
+   "owner": "Rectangle Pro",
+   "action": "smallerWidth",
+   "source": "defaults",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "ctrl+opt+'",
+   "owner": "Rectangle Pro",
+   "action": "largerHeight",
+   "source": "defaults",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "ctrl+opt+/",
+   "owner": "Rectangle Pro",
+   "action": "smallerHeight",
+   "source": "defaults",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "ctrl+shift+A",
+   "owner": "TickTick",
+   "action": "TKQuickAddTask",
+   "source": "defaults",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "HYPER+/",
+   "owner": "Logi Options+",
+   "action": "gesture down",
+   "source": "settings.db",
+   "running": true,
+   "kind": "sender"
+  },
+  {
+   "combo": "None",
+   "owner": "Logi Options+",
+   "action": "gesture click",
+   "source": "settings.db",
+   "running": true,
+   "kind": "sender"
+  },
+  {
+   "combo": "capslock",
+   "owner": "Raycast",
+   "action": "hyperKey shift=on",
+   "source": "defaults",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "cmd+Space",
+   "owner": "Raycast",
+   "action": "launcher",
+   "source": "manual.json",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "opt+shift+Space",
+   "owner": "Gemini",
+   "action": "full chat",
+   "source": "manual.json",
+   "running": true,
+   "kind": "listener"
+  },
+  {
+   "combo": "shift+cmd+/",
+   "owner": "macOS",
+   "action": "Help menu search",
+   "source": "manual.json",
+   "running": true,
+   "kind": "listener"
+  }
+ ],
+ "clashes": []
+}

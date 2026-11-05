@@ -1,0 +1,40 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "my-keys",
+  "title": "My Keys",
+  "description": "Every shortcut, mouse gesture and ring slot from Shortcut Keeper's keys.json: searchable, runnable, checked daily for clashes.",
+  "icon": "icon.png",
+  "author": "your-raycast-username",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "index",
+      "title": "My Keys",
+      "subtitle": "Key Deck",
+      "description": "Every key on one screen with pictures (Key Deck); press a badge key to run one",
+      "mode": "no-view"
+    },
+    {
+      "name": "search",
+      "title": "Search Keys",
+      "subtitle": "Shortcuts",
+      "description": "Search your shortcuts by words and run one",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.6.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop"
+  }
+}

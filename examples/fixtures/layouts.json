@@ -1,0 +1,460 @@
+{
+ "about": "The four meeting layouts and the Caps 4 swap key, as fractions of the visible screen (top-left origin). tests/layout-test.py checks them; layout.py, Key Deck and rectsync.py read the same blocks from keys.json.",
+ "sections": [
+  {
+   "id": "windows",
+   "title": "Windows"
+  },
+  {
+   "id": "dictation",
+   "title": "Dictation and meetings"
+  }
+ ],
+ "keys": [
+  {
+   "id": "transcript-swap",
+   "section": "dictation",
+   "keys": "Caps 4",
+   "combo": "HYPER+4",
+   "app": "Key Deck",
+   "action": "BetterWispr window: forward; again, Granola back on top (minimized when Granola is not open)",
+   "policy": "enforce",
+   "deck": {
+    "short": "BetterWispr window",
+    "url": "keydeck://swap",
+    "caps": [
+     "Caps",
+     "4"
+    ]
+   },
+   "verify": {
+    "by": "scan",
+    "owner": "Key Deck",
+    "action": "transcript-swap",
+    "combos": [
+     "HYPER+4"
+    ]
+   }
+  },
+  {
+   "id": "layout-transcripts",
+   "section": "windows",
+   "keys": "Automatic on calls",
+   "action": "Video call layout: the left third yours; the call centred under the camera with Claude right under it; Granola top right with BetterWispr's notes waiting behind it (BW chip or Caps 2 swaps them); Krisp bottom right with Wispr's recorder behind it (Caps 5 / Caps 6 or the pill swaps them). Nothing floats over Granola: down the right edge, Wispr's status pill (middle), Granola's nub, Krisp's widget and BetterWispr's pill sit in the strip where Wispr peeks out; the call pinned under the camera (Webcam Mode).",
+   "app": "Rectangle Pro",
+   "verify": {
+    "by": "rule",
+    "rule": "rect-layouts"
+   },
+   "policy": "watch",
+   "deck": {
+    "rects": [
+     [
+      0.3332,
+      0.4996,
+      0.3337,
+      0.5004
+     ],
+     [
+      0.6304,
+      0.0,
+      0.3696,
+      0.4996
+     ],
+     [
+      0.6668,
+      0.0,
+      0.3332,
+      0.4996
+     ],
+     [
+      0.7082,
+      0.4996,
+      0.2918,
+      0.5004
+     ],
+     [
+      0.6668,
+      0.4996,
+      0.2529,
+      0.5004
+     ],
+     [
+      0.8735,
+      0.7409,
+      0.1265,
+      0.1609
+     ],
+     [
+      0.9796,
+      0.6766,
+      0.0204,
+      0.0563
+     ],
+     [
+      0.3332,
+      0.0,
+      0.3337,
+      0.4996
+     ]
+    ],
+    "labels": [
+     "Claude",
+     "BetterWispr",
+     "Granola",
+     "Wispr",
+     "Krisp",
+     "Krisp widget",
+     "Granola nub",
+     "Call"
+    ],
+    "url": "keydeck://layout?id=layout-transcripts",
+    "order": 28,
+    "short": "Video call",
+    "group": "meetings",
+    "rect_custom": 89,
+    "caption": "Auto on video calls",
+    "panel": false,
+    "apps": [
+     "com.anthropic.claudefordesktop",
+     "org.betterwispr.app",
+     "com.granola.app",
+     "com.electron.wispr-flow",
+     "ai.krisp.krispMac",
+     "ai.krisp.krispMac",
+     "com.granola.app",
+     "picture:call"
+    ],
+    "titles": [
+     "",
+     "",
+     "",
+     "only:Meeting Recorder",
+     "exact:Krisp",
+     "exact:Krisp Widget",
+     "panel:Nub",
+     ""
+    ],
+    "behind": [
+     1
+    ]
+   },
+   "note": "Placed by layout.py (finds each app window, skips closed apps, keeps minimum widths on screen)"
+  },
+  {
+   "id": "layout-call",
+   "section": "windows",
+   "keys": "Automatic on calls",
+   "action": "Phone call layout: the left third yours; the call centred under the camera with Claude right under it; Granola top right with BetterWispr's notes waiting behind it (BW chip or Caps 2 swaps them); Krisp bottom right with Wispr's recorder behind it (Caps 5 / Caps 6 or the pill swaps them). Nothing floats over Granola: down the right edge, Wispr's status pill (middle), Granola's nub, Krisp's widget and BetterWispr's pill sit in the strip where Wispr peeks out; Phone or FaceTime under the camera.",
+   "app": "Rectangle Pro",
+   "verify": {
+    "by": "rule",
+    "rule": "rect-layouts"
+   },
+   "policy": "watch",
+   "deck": {
+    "rects": [
+     [
+      0.3332,
+      0.4996,
+      0.3337,
+      0.5004
+     ],
+     [
+      0.6304,
+      0.0,
+      0.3696,
+      0.4996
+     ],
+     [
+      0.6668,
+      0.0,
+      0.3332,
+      0.4996
+     ],
+     [
+      0.7082,
+      0.4996,
+      0.2918,
+      0.5004
+     ],
+     [
+      0.6668,
+      0.4996,
+      0.2529,
+      0.5004
+     ],
+     [
+      0.8735,
+      0.7409,
+      0.1265,
+      0.1609
+     ],
+     [
+      0.9796,
+      0.6766,
+      0.0204,
+      0.0563
+     ],
+     [
+      0.3332,
+      0.0,
+      0.3337,
+      0.4996
+     ]
+    ],
+    "labels": [
+     "Claude",
+     "BetterWispr",
+     "Granola",
+     "Wispr",
+     "Krisp",
+     "Krisp widget",
+     "Granola nub",
+     "Phone"
+    ],
+    "url": "keydeck://layout?id=layout-call",
+    "order": 29,
+    "short": "Phone call",
+    "group": "meetings",
+    "rect_custom": 904,
+    "caption": "Auto on phone calls",
+    "panel": false,
+    "apps": [
+     "com.anthropic.claudefordesktop",
+     "org.betterwispr.app",
+     "com.granola.app",
+     "com.electron.wispr-flow",
+     "ai.krisp.krispMac",
+     "ai.krisp.krispMac",
+     "com.granola.app",
+     "com.apple.mobilephone|com.apple.FaceTime"
+    ],
+    "titles": [
+     "",
+     "",
+     "",
+     "only:Meeting Recorder",
+     "exact:Krisp",
+     "exact:Krisp Widget",
+     "panel:Nub",
+     ""
+    ],
+    "behind": [
+     1
+    ]
+   },
+   "note": "Placed by layout.py (finds each app window, skips closed apps, keeps minimum widths on screen)"
+  },
+  {
+   "id": "layout-transcripts-desk",
+   "section": "windows",
+   "keys": "Automatic on calls",
+   "action": "Desk video call layout (ultrawide), same map: the left third yours; the call centred under the camera with Claude right under it; Granola top right with BetterWispr's notes waiting behind it (BW chip or Caps 2 swaps them); Krisp bottom right with Wispr's recorder behind it (Caps 5 / Caps 6 or the pill swaps them). Nothing floats over Granola: down the right edge, Wispr's status pill (middle), Granola's nub, Krisp's widget and BetterWispr's pill sit in the strip where Wispr peeks out.",
+   "app": "Rectangle Pro",
+   "verify": {
+    "by": "none"
+   },
+   "policy": "watch",
+   "deck": {
+    "rects": [
+     [
+      0.3333,
+      0.5,
+      0.3333,
+      0.5
+     ],
+     [
+      0.6667,
+      0.0,
+      0.3333,
+      0.5
+     ],
+     [
+      0.6667,
+      0.0,
+      0.3333,
+      0.5
+     ],
+     [
+      0.7396,
+      0.5,
+      0.2604,
+      0.5
+     ],
+     [
+      0.6667,
+      0.5,
+      0.2865,
+      0.5
+     ],
+     [
+      0.9323,
+      0.6969,
+      0.0677,
+      0.1312
+     ],
+     [
+      0.9891,
+      0.6444,
+      0.0109,
+      0.0459
+     ],
+     [
+      0.3333,
+      0.0,
+      0.3333,
+      0.5
+     ]
+    ],
+    "labels": [
+     "Claude",
+     "BetterWispr",
+     "Granola",
+     "Wispr",
+     "Krisp",
+     "Krisp widget",
+     "Granola nub",
+     "Call"
+    ],
+    "aspect": 2.39,
+    "url": "keydeck://layout?id=layout-transcripts-desk",
+    "group": "meetings",
+    "order": 30,
+    "rect_custom": 920,
+    "short": "Desk video",
+    "caption": "Auto at the desk",
+    "panel": false,
+    "apps": [
+     "com.anthropic.claudefordesktop",
+     "org.betterwispr.app",
+     "com.granola.app",
+     "com.electron.wispr-flow",
+     "ai.krisp.krispMac",
+     "ai.krisp.krispMac",
+     "com.granola.app",
+     "picture:call"
+    ],
+    "titles": [
+     "",
+     "",
+     "",
+     "only:Meeting Recorder",
+     "exact:Krisp",
+     "exact:Krisp Widget",
+     "panel:Nub",
+     ""
+    ],
+    "behind": [
+     1
+    ]
+   },
+   "note": "Placed by layout.py (finds each app window, skips closed apps, keeps minimum widths on screen)"
+  },
+  {
+   "id": "layout-call-desk",
+   "section": "windows",
+   "keys": "Automatic on calls",
+   "action": "Desk phone call layout (ultrawide): the desk video layout, with Phone or FaceTime under the camera.",
+   "app": "Rectangle Pro",
+   "verify": {
+    "by": "none"
+   },
+   "policy": "watch",
+   "deck": {
+    "rects": [
+     [
+      0.3333,
+      0.5,
+      0.3333,
+      0.5
+     ],
+     [
+      0.6667,
+      0.0,
+      0.3333,
+      0.5
+     ],
+     [
+      0.6667,
+      0.0,
+      0.3333,
+      0.5
+     ],
+     [
+      0.7396,
+      0.5,
+      0.2604,
+      0.5
+     ],
+     [
+      0.6667,
+      0.5,
+      0.2865,
+      0.5
+     ],
+     [
+      0.9323,
+      0.6969,
+      0.0677,
+      0.1312
+     ],
+     [
+      0.9891,
+      0.6444,
+      0.0109,
+      0.0459
+     ],
+     [
+      0.3333,
+      0.0,
+      0.3333,
+      0.5
+     ]
+    ],
+    "labels": [
+     "Claude",
+     "BetterWispr",
+     "Granola",
+     "Wispr",
+     "Krisp",
+     "Krisp widget",
+     "Granola nub",
+     "Phone"
+    ],
+    "aspect": 2.39,
+    "url": "keydeck://layout?id=layout-call-desk",
+    "group": "meetings",
+    "order": 31,
+    "rect_custom": 930,
+    "short": "Desk phone",
+    "caption": "Auto at the desk",
+    "panel": false,
+    "apps": [
+     "com.anthropic.claudefordesktop",
+     "org.betterwispr.app",
+     "com.granola.app",
+     "com.electron.wispr-flow",
+     "ai.krisp.krispMac",
+     "ai.krisp.krispMac",
+     "com.granola.app",
+     "com.apple.mobilephone|com.apple.FaceTime"
+    ],
+    "titles": [
+     "",
+     "",
+     "",
+     "only:Meeting Recorder",
+     "exact:Krisp",
+     "exact:Krisp Widget",
+     "panel:Nub",
+     ""
+    ],
+    "behind": [
+     1
+    ]
+   },
+   "note": "Placed by layout.py (finds each app window, skips closed apps, keeps minimum widths on screen)"
+  }
+ ]
+}

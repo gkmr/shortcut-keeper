@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- The daily check without an agent: keeper.py in fix mode at 5:30 every morning. keeper's own safety gate still defers any fix
+     while a call is live or you are at the keyboard. Replace __HOME__, copy to ~/Library/LaunchAgents/ and bootstrap it.
+     The agent version of this job (on-screen checks, clash triage, monthly doc refresh) is docs/runbook.md. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.example.shortcut-keeper</string>
+  <key>ProgramArguments</key><array>
+    <string>/usr/bin/python3</string><string>__HOME__/Projects/shortcut-keeper/keeper.py</string><string>--fix</string><string>--quiet</string>
+  </array>
+  <key>EnvironmentVariables</key><dict>
+    <key>SHORTCUT_KEEPER_HOME</key><string>__HOME__/Projects/shortcut-keeper</string>
+    <key>SHORTCUT_KEEPER_NOTIFY</key><string>__HOME__/Projects/shortcut-keeper/examples/notify-example.sh</string>
+  </dict>
+  <key>StartCalendarInterval</key><dict><key>Hour</key><integer>5</integer><key>Minute</key><integer>30</integer></dict>
+  <key>StandardOutPath</key><string>__HOME__/Projects/shortcut-keeper/.state/keeper.log</string>
+  <key>StandardErrorPath</key><string>__HOME__/Projects/shortcut-keeper/.state/keeper.log</string>
+</dict>
+</plist>

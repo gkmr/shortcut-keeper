@@ -1,0 +1,34 @@
+# OS and editors
+.DS_Store
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+
+# Node / Raycast extension
+node_modules/
+raycast-ext/dist/
+raycast-ext/raycast-env.d.ts
+
+# backups and old versions
+*.bak
+*.bak-*
+*.pre-v*
+*.tmp
+
+# runtime state and personal data written next to the code (keep your own keys.json private or in a separate repo)
+.state/
+backups/
+reports/
+/keys.json
+/keys.md
+/status.json
+/ax_check.json
+/keydeck.json
+/manual.json
+
+# compiled helpers (build them from the .swift sources)
+bin/*
+!bin/*.swift
+!bin/*.js

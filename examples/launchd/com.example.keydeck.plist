@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Keeps Key Deck running. Replace __HOME__ with your home folder, copy to ~/Library/LaunchAgents/, then:
+     launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.example.keydeck.plist -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.example.keydeck</string>
+  <key>ProgramArguments</key><array><string>__HOME__/Applications/Key Deck.app/Contents/MacOS/KeyDeck</string></array>
+  <key>EnvironmentVariables</key><dict><key>SHORTCUT_KEEPER_HOME</key><string>__HOME__/Projects/shortcut-keeper</string></dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>StandardErrorPath</key><string>__HOME__/Projects/shortcut-keeper/.state/keydeck.err</string>
+</dict>
+</plist>

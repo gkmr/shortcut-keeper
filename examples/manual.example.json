@@ -1,0 +1,76 @@
+[
+  {
+    "key": "cmd+Space",
+    "owner": "Raycast",
+    "action": "launcher",
+    "app": "Raycast"
+  },
+  {
+    "key": "cmd+`",
+    "owner": "Raycast",
+    "action": "Clipboard History",
+    "app": "Raycast"
+  },
+  {
+    "key": "opt+shift+Space",
+    "owner": "Gemini",
+    "action": "full chat",
+    "app": "Gemini"
+  },
+  {
+    "key": "shift+cmd+6",
+    "owner": "Gemini",
+    "action": "select from screen",
+    "app": "Gemini"
+  },
+  {
+    "key": "both cmd keys",
+    "owner": "Gemini",
+    "action": "share active window",
+    "app": "Gemini"
+  },
+  {
+    "key": "opt opt (double tap)",
+    "owner": "Claude",
+    "action": "quick window (default)",
+    "app": "Claude"
+  },
+  {
+    "key": "opt+Tab",
+    "owner": "AltTab",
+    "action": "switcher (default)",
+    "app": "AltTab"
+  },
+  {
+    "key": "shift+cmd+Space",
+    "owner": "1Password",
+    "action": "quick access (default)",
+    "app": "1Password"
+  },
+  {
+    "key": "shift+cmd+3",
+    "owner": "macOS",
+    "action": "screenshot screen"
+  },
+  {
+    "key": "shift+cmd+4",
+    "owner": "macOS",
+    "action": "screenshot area"
+  },
+  {
+    "key": "shift+cmd+5",
+    "owner": "macOS",
+    "action": "screenshot toolbar"
+  },
+  {
+    "key": "shift+cmd+/",
+    "owner": "macOS",
+    "action": "Help menu search"
+  },
+  {
+    "key": "HYPER+G",
+    "owner": "Granola",
+    "action": "voice typing (hold; double-tap = hands-free)",
+    "app": "Granola"
+  }
+]

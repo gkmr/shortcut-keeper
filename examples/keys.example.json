@@ -1,0 +1,544 @@
+{
+  "version": 1,
+  "updated": "2026-11-03",
+  "about": "Desired state for every shortcut. keeper.py compares this with what the apps actually have (scan.py) every day. policy: enforce = restore if it drifts; adopt = accept the app's change and update this file; watch = report only. pending = you still have to set it.",
+  "sections": [
+    {
+      "id": "lookup",
+      "title": "Look up"
+    },
+    {
+      "id": "launch",
+      "title": "Launch, paste, AI"
+    },
+    {
+      "id": "dictation",
+      "title": "Dictation and meetings"
+    },
+    {
+      "id": "windows",
+      "title": "Windows"
+    },
+    {
+      "id": "mouse",
+      "title": "Mouse gesture button (hold)"
+    },
+    {
+      "id": "ring",
+      "title": "Actions Ring (click the gesture button)"
+    },
+    {
+      "id": "screenshots",
+      "title": "Screenshots"
+    },
+    {
+      "id": "keyboard",
+      "title": "Keyboard"
+    },
+    {
+      "id": "other",
+      "title": "Other apps"
+    }
+  ],
+  "keys": [
+    {
+      "id": "my-keys",
+      "section": "lookup",
+      "keys": "Caps /",
+      "action": "Every shortcut on one screen, click to run",
+      "app": "Key Deck",
+      "note": "mouse: gesture down",
+      "combo": "HYPER+/",
+      "verify": {
+        "by": "scan",
+        "owner": "Key Deck",
+        "action": "deck",
+        "combos": [
+          "HYPER+/"
+        ]
+      },
+      "policy": "enforce",
+      "deck": {
+        "short": "This screen"
+      }
+    },
+    {
+      "id": "help-menu",
+      "section": "lookup",
+      "keys": "⌘⇧/",
+      "action": "Search the menus of the app in front",
+      "app": "macOS",
+      "note": "shows each command's keys",
+      "combo": "shift+cmd+/",
+      "verify": {
+        "by": "none"
+      },
+      "policy": "watch",
+      "deck": {
+        "short": "Search the front app's menus"
+      }
+    },
+    {
+      "id": "raycast",
+      "section": "launch",
+      "keys": "⌘Space",
+      "action": "Raycast launcher",
+      "app": "Raycast",
+      "combo": "cmd+Space",
+      "verify": {
+        "by": "raycast_ax"
+      },
+      "policy": "enforce",
+      "deck": {
+        "short": "Raycast launcher"
+      }
+    },
+    {
+      "id": "gemini",
+      "section": "launch",
+      "keys": "⌥⇧Space",
+      "action": "Gemini chat",
+      "app": "Gemini",
+      "combo": "opt+shift+Space",
+      "verify": {
+        "by": "gemini_ax",
+        "field": "Full chat keyboard shortcut",
+        "value": "⌥⇧ Space"
+      },
+      "policy": "enforce",
+      "deck": {
+        "short": "Gemini chat"
+      }
+    },
+    {
+      "id": "wispr-ptt",
+      "section": "dictation",
+      "keys": "Fn or Right Ctrl (hold)",
+      "action": "Dictate with Wispr Flow, release to paste",
+      "app": "Wispr Flow",
+      "note": "external keyboard: Right Ctrl",
+      "verify": {
+        "by": "scan",
+        "owner": "Wispr Flow",
+        "combos": [
+          "fn",
+          "rctrl"
+        ],
+        "action": "ptt"
+      },
+      "policy": "enforce",
+      "deck": {
+        "short": "Dictate, release to paste",
+        "caps": [
+          "fn",
+          "|or|",
+          "right ⌃",
+          "|hold|"
+        ]
+      }
+    },
+    {
+      "id": "wispr-paste-last",
+      "section": "dictation",
+      "keys": "⌃⌘V",
+      "action": "Paste last dictation again",
+      "app": "Wispr Flow",
+      "verify": {
+        "by": "scan",
+        "owner": "Wispr Flow",
+        "action": "paste_last_text"
+      },
+      "policy": "adopt",
+      "combo": "ctrl+cmd+V",
+      "deck": {
+        "short": "Paste the last dictation"
+      }
+    },
+    {
+      "id": "left-half",
+      "section": "windows",
+      "keys": "⌃⌥←",
+      "action": "Left half",
+      "app": "Rectangle Pro",
+      "combo": "ctrl+opt+Left",
+      "note": "Rectangle default",
+      "verify": {
+        "by": "none"
+      },
+      "policy": "watch",
+      "deck": {
+        "rect": [
+          0,
+          0,
+          0.5,
+          1
+        ],
+        "url": "rectangle-pro://execute-action?name=left-half",
+        "order": 1,
+        "short": "Left ½",
+        "group": "windows",
+        "rect_action": 0,
+        "caption": "Left · Snap panel"
+      }
+    },
+    {
+      "id": "center",
+      "section": "windows",
+      "keys": "⌃⌥C",
+      "action": "Center box: the window centered, 60% wide and 60% tall",
+      "app": "Rectangle Pro",
+      "combo": "ctrl+opt+C",
+      "note": "Rectangle Pro Almost Maximize set to 60%",
+      "verify": {
+        "by": "scan",
+        "owner": "Rectangle Pro",
+        "action": "almostMaximize",
+        "combos": [
+          "ctrl+opt+C"
+        ]
+      },
+      "policy": "enforce",
+      "deck": {
+        "rect": [
+          0.2,
+          0.2,
+          0.6,
+          0.6
+        ],
+        "url": "rectangle-pro://execute-action?name=almost-maximize",
+        "order": 13,
+        "short": "Center",
+        "group": "windows",
+        "rect_action": 29,
+        "caption": "Center · Snap panel"
+      }
+    },
+    {
+      "id": "sixth",
+      "section": "windows",
+      "keys": "Caps Y",
+      "action": "Top center sixth: the call box",
+      "app": "Rectangle Pro",
+      "verify": {
+        "by": "scan",
+        "owner": "Rectangle Pro",
+        "action": "topCenterSixth",
+        "combos": [
+          "HYPER+Y"
+        ]
+      },
+      "policy": "enforce",
+      "deck": {
+        "rect": [
+          0.3333333333333333,
+          0,
+          0.3333333333333333,
+          0.5
+        ],
+        "url": "rectangle-pro://execute-action?name=top-center-sixth",
+        "order": 9,
+        "short": "Top center ⅙ (call)",
+        "group": "windows",
+        "rect_action": 43,
+        "caption": "Center · Snap panel"
+      },
+      "combo": "HYPER+Y"
+    },
+    {
+      "id": "resize",
+      "section": "windows",
+      "keys": "⌃⌥ [  ]  '  /",
+      "action": "Narrower, wider, taller, shorter",
+      "app": "Rectangle Pro",
+      "verify": {
+        "by": "scan",
+        "owner": "Rectangle Pro",
+        "action": "largerWidth"
+      },
+      "also": [
+        "smallerWidth",
+        "largerHeight",
+        "smallerHeight"
+      ],
+      "policy": "adopt",
+      "combo": "ctrl+opt+]",
+      "deck": {
+        "short": "Narrower, wider, taller, shorter",
+        "caps": [
+          "⌃",
+          "⌥",
+          "[",
+          "]",
+          "'",
+          "/"
+        ],
+        "run": false
+      }
+    },
+    {
+      "id": "webcam",
+      "section": "windows",
+      "keys": "Caps W",
+      "action": "Webcam Mode: call window under the camera, pinned on top. Again to undo",
+      "app": "Key Deck",
+      "verify": {
+        "by": "scan",
+        "owner": "Key Deck",
+        "action": "webcam",
+        "combos": [
+          "HYPER+W"
+        ]
+      },
+      "policy": "enforce",
+      "combo": "HYPER+W",
+      "deck": {
+        "rect": [
+          0.3333333333333333,
+          0,
+          0.3333333333333333,
+          0.3333333333333333
+        ],
+        "url": "keydeck://webcam",
+        "order": 27,
+        "short": "Webcam Mode",
+        "group": "meetings",
+        "badge": "pin.fill"
+      }
+    },
+    {
+      "id": "g-down",
+      "section": "mouse",
+      "keys": "Gesture down",
+      "action": "Key Deck on screen (sends Caps /)",
+      "app": "Logi Options+",
+      "verify": {
+        "by": "scan",
+        "owner": "Logi Options+",
+        "action": "gesture down",
+        "combos": [
+          "HYPER+/"
+        ]
+      },
+      "policy": "enforce",
+      "deck": {
+        "short": "My Keys"
+      }
+    },
+    {
+      "id": "caps-hyper",
+      "section": "keyboard",
+      "keys": "Caps Lock (hold)",
+      "action": "Hyper: ⌃⌥⇧⌘ in one key",
+      "app": "Raycast",
+      "verify": {
+        "by": "rule",
+        "rule": "hyper-key"
+      },
+      "policy": "enforce",
+      "deck": {
+        "short": "Hyper: ⌃⌥⇧⌘ in one key",
+        "caps": [
+          "Caps",
+          "|hold|"
+        ]
+      }
+    },
+    {
+      "id": "spotlight",
+      "section": "keyboard",
+      "keys": "⌘Space",
+      "action": "Spotlight stays off so ⌘Space opens Raycast",
+      "app": "macOS",
+      "verify": {
+        "by": "rule",
+        "rule": "spotlight-off"
+      },
+      "policy": "watch",
+      "sheet": false
+    },
+    {
+      "id": "ticktick-quick-add",
+      "section": "other",
+      "keys": "Caps A",
+      "action": "TickTick quick add",
+      "app": "TickTick",
+      "combo": "HYPER+A",
+      "verify": {
+        "by": "scan",
+        "owner": "TickTick",
+        "action": "TKQuickAddTask",
+        "combos": [
+          "HYPER+A"
+        ]
+      },
+      "policy": "enforce",
+      "pending": "TickTick > Settings > Shortcuts > Quick Add: hold Caps Lock and press A",
+      "deck": {
+        "short": "TickTick quick add"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "hyper-key",
+      "text": "Caps Lock is the Hyper key (Raycast, include Shift on)",
+      "check": {
+        "by": "raycast_hyper"
+      },
+      "policy": "enforce",
+      "gk_fix": "Raycast Settings > Keyboard > Hyper Key: Caps Lock, include Shift"
+    },
+    {
+      "id": "spotlight-off",
+      "text": "Spotlight ⌘Space stays off (so ⌘Space is free)",
+      "check": {
+        "by": "symbolic",
+        "id": "64",
+        "enabled": false
+      },
+      "policy": "watch"
+    },
+    {
+      "id": "wispr-no-left-ctrl",
+      "text": "Wispr Flow must not use left Control (it fired on every ⌃⌥ and Caps chord) or ⌃Space (Raycast owns it)",
+      "check": {
+        "by": "wispr_absent",
+        "codes": [
+          "59",
+          "49+59"
+        ]
+      },
+      "policy": "enforce"
+    },
+    {
+      "id": "screenshots-location",
+      "text": "Screenshots and recordings save to ~/Pictures/Screenshots",
+      "check": {
+        "by": "defaults",
+        "domain": "com.apple.screencapture",
+        "key": "location-screenshot",
+        "equals": "~/Pictures/Screenshots"
+      },
+      "policy": "enforce"
+    },
+    {
+      "id": "rect-panel",
+      "text": "Rectangle snap panel shows the Key Deck Windows tiles in the same order (one source: keys.json)",
+      "check": {
+        "by": "rect_panel_sync"
+      },
+      "policy": "enforce"
+    },
+    {
+      "id": "gemini-quiet",
+      "text": "Gemini mini chat and Speak to Window stay off (they used ⌥Space and Fn; Fn belongs to Wispr)",
+      "check": {
+        "by": "gemini_ax",
+        "expect": {
+          "Mini chat keyboard shortcut": "None",
+          "Tap to speak keyboard shortcut": "None",
+          "Hold while speaking keyboard shortcut": "None"
+        }
+      },
+      "policy": "enforce"
+    },
+    {
+      "id": "keydeck-running",
+      "text": "Key Deck is running (Caps / overlay, Caps W Webcam Mode)",
+      "check": {
+        "by": "launchd",
+        "label": "com.example.keydeck",
+        "plist": "~/Library/LaunchAgents/com.example.keydeck.plist"
+      },
+      "policy": "enforce"
+    },
+    {
+      "id": "no-interceptor",
+      "policy": "watch",
+      "text": "No driver-level key remapper (Karabiner-Elements) taking Caps Lock before Raycast's Hyper Key",
+      "gk_fix": "Keep one Hyper key: Raycast's, or Karabiner's with Raycast's Hyper Key set to None",
+      "check": {
+        "by": "no_interceptor",
+        "apps": [
+          "/Applications/Karabiner-Elements.app"
+        ],
+        "procs": [
+          "karabiner_grabber",
+          "Karabiner-Core-Service"
+        ]
+      }
+    },
+    {
+      "id": "secure-input",
+      "policy": "report",
+      "text": "Times an app in the background held secure input and paused the Caps keys (report only)",
+      "check": {
+        "by": "log_errors",
+        "path": "~/Projects/shortcut-keeper/.state/keydeck.log",
+        "hours": 168,
+        "pattern": "secure input held by"
+      }
+    }
+  ],
+  "fixers": {
+    "wispr_required": {
+      "63": "ptt",
+      "62": "ptt",
+      "49+63": "popo"
+    },
+    "betterwispr_shortcut": {
+      "key": "B",
+      "keyCode": 11,
+      "modifiers": 6912
+    },
+    "rectangle": {
+      "topCenterSixth": {
+        "type": 0,
+        "keyCode": 16,
+        "modifierFlags": 1966080
+      },
+      "almostMaximize": {
+        "type": 0,
+        "keyCode": 8,
+        "modifierFlags": 786432
+      }
+    }
+  },
+  "acknowledged_reserved": [
+    "cmd+`",
+    "cmd+space",
+    "ctrl+space",
+    "shift+cmd+/",
+    "shift+cmd+3",
+    "shift+cmd+4",
+    "shift+cmd+5"
+  ],
+  "ignore": [
+    {
+      "owner": "Logi Options+",
+      "action": "gesture click",
+      "why": "the gesture click opens the Actions Ring; it sends no key"
+    }
+  ],
+  "deck_theme": "auto",
+  "removed": [
+    {
+      "id": "alfred",
+      "section": "launch",
+      "keys": "⌥Space",
+      "action": "Alfred launcher",
+      "app": "Alfred 5",
+      "app_path": "/Applications/Alfred 5.app",
+      "combo": "opt+Space",
+      "verify": {
+        "by": "none"
+      },
+      "policy": "watch",
+      "deck": {
+        "short": "Alfred launcher"
+      },
+      "removed": "2026-10-27",
+      "why": "unused for a week; Raycast covers launcher, clipboard and snippets"
+    }
+  ]
+}
