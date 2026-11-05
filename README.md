@@ -1,5 +1,7 @@
 # Shortcut Keeper
 
+[![tests](https://github.com/gkmr/shortcut-keeper/actions/workflows/tests.yml/badge.svg)](https://github.com/gkmr/shortcut-keeper/actions/workflows/tests.yml) ![python](https://img.shields.io/badge/python-3.9%20%7C%203.12-blue) ![deps](https://img.shields.io/badge/dependencies-stdlib%20only-brightgreen) [![license](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
+
 Desired-state-as-code for macOS keyboard and mouse shortcuts: a declared state, an independent scanner, per-key
 policies, safe auto-repair and a daily report.
 
